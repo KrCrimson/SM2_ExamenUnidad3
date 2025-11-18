@@ -5,6 +5,7 @@ import 'package:SM2_ExamenUnidad3/services/session.dart';
 import 'package:SM2_ExamenUnidad3/services/auth_service.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   group('User model', () {
     test('fromJson parses correctly', () {
       final json = {
