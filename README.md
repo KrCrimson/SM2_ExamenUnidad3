@@ -86,9 +86,9 @@ jobs:
 ```
 
 ### Ejecución del workflow en Actions
-![alt text](image.png)
+![alt text](images/Workflow.png)
 
-![alt text](image-1.png)
+![alt text](images/Workflow1.png)
 ---
 
 ## Explicación de lo realizado
