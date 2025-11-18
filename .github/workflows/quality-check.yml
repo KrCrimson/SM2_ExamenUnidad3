@@ -1,23 +1,65 @@
-name: Quality Check
+name: Autograding Tests
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  repository_dispatch:
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
 
 jobs:
-  analyze:
+  run-autograding-tests:
     runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.0'
-      - name: Install dependencies
+
+      - name: flutter pub get
         run: flutter pub get
+
       - name: Analyze
-        run: flutter analyze
-      - name: Run tests
-        run: flutter test
+        id: analyze
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Analyze
+          setup-command: flutter pub get
+          command: flutter analyze
+          timeout: 30
+          max-score: 4
+
+      - name: Test - User model
+        id: t1
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: User model tests
+          setup-command: flutter pub get
+          command: flutter test --plain-name 'User model'
+          timeout: 30
+          max-score: 6
+
+      - name: Test - All
+        id: t2
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: All tests
+          setup-command: flutter pub get
+          command: flutter test
+          timeout: 30
+          max-score: 10
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          ANALYZE_RESULTS: "${{steps.analyze.outputs.result}}"
+          T1_RESULTS: "${{steps.t1.outputs.result}}"
+          T2_RESULTS: "${{steps.t2.outputs.result}}"
+        with:
+          runners: analyze,t1,t2
