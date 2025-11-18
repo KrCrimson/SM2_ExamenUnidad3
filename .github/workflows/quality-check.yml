@@ -23,11 +23,12 @@ jobs:
           flutter-version: '3.19.0'
 
       - name: flutter pub get
-        run: flutter pub get
-        continue-on-error: true
-        retry:
-          max-attempts: 3
-          delay-seconds: 10
+        run: |
+          for i in 1 2 3; do
+            flutter pub get && break
+            echo "Retrying flutter pub get ($i/3)..."
+            sleep 10
+          done
 
       - name: Analyze
         id: analyze
