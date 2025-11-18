@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ExternalVisitsReportScreen extends StatefulWidget {
-  const ExternalVisitsReportScreen({Key? key}) : super(key: key);
+  const ExternalVisitsReportScreen({super.key});
 
   @override
   State<ExternalVisitsReportScreen> createState() => _ExternalVisitsReportScreenState();
@@ -156,7 +156,7 @@ class _ExternalVisitsReportScreenState extends State<ExternalVisitsReportScreen>
               borderRadius: BorderRadius.circular(8),
               gradient: LinearGradient(colors: [
                 colorList[colorIndex % colorList.length],
-                colorList[(colorIndex + 1) % colorList.length].withOpacity(0.7),
+                colorList[(colorIndex + 1) % colorList.length].withAlpha((0.7 * 255).toInt()),
               ]),
               width: 18,
               backDrawRodData: BackgroundBarChartRodData(
@@ -273,7 +273,7 @@ class _ExternalVisitsReportScreenState extends State<ExternalVisitsReportScreen>
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.9),
+  backgroundColor: Colors.indigo.withAlpha((0.9 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Reporte de Visitas Externas',

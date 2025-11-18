@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PendingExitScreen extends StatelessWidget {
-  const PendingExitScreen({Key? key}) : super(key: key);
+  const PendingExitScreen({super.key});
 
   Future<List<Map<String, dynamic>>> _getPendingVisitors() async {
     // Suponiendo que en la colección 'visitas' hay un campo 'salida_registrada' (bool)
@@ -20,7 +20,7 @@ class PendingExitScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.9),
+  backgroundColor: Colors.indigo.withAlpha((0.9 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Personas sin salida',
@@ -59,7 +59,7 @@ class PendingExitScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.red.withOpacity(0.2),
+                          color: Colors.red.withAlpha((0.2 * 255).toInt()),
                           blurRadius: 16,
                           offset: const Offset(0, 8),
                         ),

@@ -14,7 +14,7 @@ import '../../login_screen.dart';
 import 'pending_exit_screen.dart';
 
 class AdminView extends StatefulWidget {
-  const AdminView({Key? key}) : super(key: key);
+  const AdminView({super.key});
 
   @override
   State<AdminView> createState() => _AdminViewState();
@@ -48,7 +48,7 @@ class _AdminViewState extends State<AdminView> {
       key: _scaffoldKey,
       drawer: _buildSideMenu(),
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.95),
+  backgroundColor: Colors.indigo.withAlpha((0.95 * 255).toInt()),
         elevation: 0,
         title: Text(
           'Dashboard Administrativo',
@@ -109,7 +109,7 @@ class _AdminViewState extends State<AdminView> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withAlpha((0.1 * 255).toInt()),
             blurRadius: 10,
             offset: const Offset(0, -5),
           ),
@@ -455,7 +455,7 @@ class _AdminViewState extends State<AdminView> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: isActive 
-            ? Colors.white.withOpacity(0.2)
+            ? Colors.white.withAlpha((0.2 * 255).toInt())
             : Colors.transparent,
       ),
       child: ListTile(
@@ -509,7 +509,7 @@ class _AdminViewState extends State<AdminView> {
                   'Gestiona tu sistema de seguridad',
                   style: GoogleFonts.lato(
                     fontSize: 14,
-                    color: Colors.white.withOpacity(0.8),
+                    color: Colors.white.withAlpha((0.8 * 255).toInt()),
                   ),
                 ),
               ],
@@ -581,7 +581,7 @@ class _AdminViewState extends State<AdminView> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withAlpha((0.1 * 255).toInt()),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),

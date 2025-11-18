@@ -120,7 +120,7 @@ class _UserAlarmDetailsScreenState extends State<UserAlarmDetailsScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.9),
+  backgroundColor: Colors.indigo.withAlpha((0.9 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Visitas de Externos',
@@ -138,7 +138,7 @@ class _UserAlarmDetailsScreenState extends State<UserAlarmDetailsScreen> {
               tooltip: 'Filtrar por rango',
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
               icon: CircleAvatar(
-                backgroundColor: Colors.white.withOpacity(0.85),
+                backgroundColor: Colors.white.withAlpha((0.85 * 255).toInt()),
                 radius: 20,
                 child: const Icon(Icons.filter_alt, color: Colors.deepPurple, size: 26),
               ),
@@ -246,14 +246,14 @@ class _UserAlarmDetailsScreenState extends State<UserAlarmDetailsScreen> {
                   return Container(
                     margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                     decoration: BoxDecoration(
-                      color: color.withOpacity(0.13),
+                      color: color.withAlpha((0.13 * 255).toInt()),
                       borderRadius: BorderRadius.circular(18),
                       border: Border(
                         left: BorderSide(color: color, width: 7),
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: color.withOpacity(0.18),
+                          color: color.withAlpha((0.18 * 255).toInt()),
                           blurRadius: 8,
                           offset: const Offset(0, 4),
                         ),

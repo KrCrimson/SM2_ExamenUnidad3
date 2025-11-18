@@ -14,12 +14,12 @@ class VisitorFormScreen extends StatefulWidget {
   final String? nombre; // <-- Agrega esto
 
   const VisitorFormScreen({
-    Key? key,
+  super.key,
     required this.dni,
     required this.guardName,
     required this.assignedDoor,
     this.nombre, // <-- Agrega esto
-  }) : super(key: key);
+  });
 
   @override
   State<VisitorFormScreen> createState() => _VisitorFormScreenState();
@@ -156,7 +156,7 @@ class _VisitorFormScreenState extends State<VisitorFormScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.92),
+  backgroundColor: Colors.indigo.withAlpha((0.92 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Formulario de Visita',
@@ -214,7 +214,7 @@ class _VisitorFormScreenState extends State<VisitorFormScreen> {
                           prefixIcon: const Icon(Icons.person, color: Colors.indigo),
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
                           filled: true,
-                          fillColor: Colors.indigo.withOpacity(0.06),
+                          fillColor: Colors.indigo.withAlpha((0.06 * 255).toInt()),
                           suffixIcon: _isLoadingName
                               ? const Padding(
                                   padding: EdgeInsets.all(8.0),
@@ -232,7 +232,7 @@ class _VisitorFormScreenState extends State<VisitorFormScreen> {
                           prefixIcon: const Icon(Icons.edit_note, color: Colors.deepPurple),
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
                           filled: true,
-                          fillColor: Colors.deepPurple.withOpacity(0.06),
+                          fillColor: Colors.deepPurple.withAlpha((0.06 * 255).toInt()),
                         ),
                         validator: (value) => value == null || value.isEmpty ? 'Ingrese el asunto' : null,
                       ),
@@ -243,7 +243,7 @@ class _VisitorFormScreenState extends State<VisitorFormScreen> {
                           prefixIcon: const Icon(Icons.school, color: Colors.teal),
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
                           filled: true,
-                          fillColor: Colors.teal.withOpacity(0.06),
+                          fillColor: Colors.teal.withAlpha((0.06 * 255).toInt()),
                         ),
                         value: _selectedFaculty,
                         items: const [

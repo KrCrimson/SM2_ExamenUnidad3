@@ -199,7 +199,7 @@ class _AdminReportChartScreenState extends State<AdminReportChartScreen> {
             color: Colors.blue,
             barWidth: 4,
             isStrokeCapRound: true,
-            belowBarData: BarAreaData(show: true, color: Colors.blue.withOpacity(0.2)),
+            belowBarData: BarAreaData(show: true, color: Colors.blue.withAlpha((0.2 * 255).toInt())),
             dotData: FlDotData(show: false),
           ),
           LineChartBarData(
@@ -208,7 +208,7 @@ class _AdminReportChartScreenState extends State<AdminReportChartScreen> {
             color: Colors.red,
             barWidth: 4,
             isStrokeCapRound: true,
-            belowBarData: BarAreaData(show: true, color: Colors.red.withOpacity(0.2)),
+            belowBarData: BarAreaData(show: true, color: Colors.red.withAlpha((0.2 * 255).toInt())),
             dotData: FlDotData(show: false),
           ),
         ],
@@ -313,7 +313,7 @@ class _AdminReportChartScreenState extends State<AdminReportChartScreen> {
               borderRadius: BorderRadius.circular(8),
               gradient: LinearGradient(colors: [
                 colorList[colorIndex % colorList.length],
-                colorList[(colorIndex + 1) % colorList.length].withOpacity(0.7),
+                colorList[(colorIndex + 1) % colorList.length].withAlpha((0.7 * 255).toInt()),
               ]),
               width: 18,
               backDrawRodData: BackgroundBarChartRodData(
@@ -539,7 +539,7 @@ class _AdminReportChartScreenState extends State<AdminReportChartScreen> {
                   gradient: LinearGradient(colors: [Colors.indigo, Colors.blue]),
                   barWidth: 4,
                   isStrokeCapRound: true,
-                  belowBarData: BarAreaData(show: true, gradient: LinearGradient(colors: [Colors.indigo.withOpacity(0.2), Colors.blue.withOpacity(0.2)])),
+                  belowBarData: BarAreaData(show: true, gradient: LinearGradient(colors: [Colors.indigo.withAlpha((0.2 * 255).toInt()), Colors.blue.withAlpha((0.2 * 255).toInt())])),
                   dotData: FlDotData(show: true, getDotPainter: (spot, percent, barData, index) {
                     return FlDotCirclePainter(
                       radius: 4,
@@ -636,7 +636,7 @@ class _AdminReportChartScreenState extends State<AdminReportChartScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.9),
+  backgroundColor: Colors.indigo.withAlpha((0.9 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Reportes Gráficos',

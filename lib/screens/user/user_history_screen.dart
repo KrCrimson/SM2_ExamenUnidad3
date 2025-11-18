@@ -215,7 +215,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.9),
+  backgroundColor: Colors.indigo.withAlpha((0.9 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Mis Registros de Asistencia',
@@ -232,7 +232,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
             child: Tooltip(
               message: 'Alumnos dentro después de las 9',
               child: CircleAvatar(
-                backgroundColor: Colors.white.withOpacity(0.85),
+                backgroundColor: Colors.white.withAlpha((0.85 * 255).toInt()),
                 radius: 22,
                 child: IconButton(
                   icon: const Icon(Icons.warning_amber_rounded, size: 28),
@@ -256,7 +256,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
             child: Tooltip(
               message: 'Visitas de externos',
               child: CircleAvatar(
-                backgroundColor: Colors.white.withOpacity(0.85),
+                backgroundColor: Colors.white.withAlpha((0.85 * 255).toInt()),
                 radius: 22,
                 child: IconButton(
                   icon: const Icon(Icons.groups_2_rounded, size: 28),
@@ -279,7 +279,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
             child: Tooltip(
               message: 'Refrescar registros',
               child: CircleAvatar(
-                backgroundColor: Colors.white.withOpacity(0.85),
+                backgroundColor: Colors.white.withAlpha((0.85 * 255).toInt()),
                 radius: 22,
                 child: IconButton(
                   icon: const Icon(Icons.refresh_rounded, size: 28),
@@ -296,7 +296,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
               tooltip: 'Filtrar por tipo',
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
               icon: CircleAvatar(
-                backgroundColor: Colors.white.withOpacity(0.85),
+                backgroundColor: Colors.white.withAlpha((0.85 * 255).toInt()),
                 radius: 20,
                 child: const Icon(Icons.filter_list_rounded, color: Colors.deepPurple, size: 26),
               ),
@@ -608,7 +608,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
         ),
         boxShadow: [
           BoxShadow(
-            color: borderColor.withOpacity(0.13),
+            color: borderColor.withAlpha((0.13 * 255).toInt()),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -617,7 +617,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
         leading: CircleAvatar(
-          backgroundColor: iconColor?.withOpacity(0.15),
+          backgroundColor: iconColor?.withAlpha((0.15 * 255).toInt()),
           radius: 28,
           child: Icon(iconData, color: iconColor, size: 32),
         ),

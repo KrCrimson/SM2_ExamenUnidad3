@@ -7,8 +7,7 @@ class AddEditUserDialog extends StatefulWidget {
   final Map<String, dynamic>? user;
   final String userRole;
 
-  const AddEditUserDialog({Key? key, this.user, required this.userRole})
-      : super(key: key);
+  const AddEditUserDialog({super.key, this.user, required this.userRole});
 
   @override
   State<AddEditUserDialog> createState() => _AddEditUserDialogState();

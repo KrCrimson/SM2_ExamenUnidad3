@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 import '../../config.dart';
 
 class AdminReportScreen extends StatefulWidget {
-  const AdminReportScreen({Key? key}) : super(key: key);
+  const AdminReportScreen({super.key});
 
   @override
   State<AdminReportScreen> createState() => _AdminReportScreenState();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // TODO: Reemplazar Firestore y FirebaseAuth por API MongoDB
 
 class UserNotificationsScreen extends StatelessWidget {
-  const UserNotificationsScreen({Key? key}) : super(key: key);
+  const UserNotificationsScreen({super.key});
 
   // Ejemplo de función que usaba Firestore:
   // final currentUser = FirebaseAuth.instance.currentUser;

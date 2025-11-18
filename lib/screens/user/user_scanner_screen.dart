@@ -402,7 +402,7 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.indigo.withOpacity(0.9),
+  backgroundColor: Colors.indigo.withAlpha((0.9 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Escáner de Accesos',
@@ -633,13 +633,13 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                           padding: const EdgeInsets.all(24),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.1),
-                            border: Border.all(color: Colors.white.withOpacity(0.2), width: 2),
+                            color: Colors.white.withAlpha((0.1 * 255).toInt()),
+                            border: Border.all(color: Colors.white.withAlpha((0.2 * 255).toInt()), width: 2),
                           ),
                           child: Icon(
                             Icons.security,
                             size: 80,
-                            color: Colors.white.withOpacity(0.8),
+                            color: Colors.white.withAlpha((0.8 * 255).toInt()),
                           ),
                         ),
                         const SizedBox(height: 32),
@@ -650,7 +650,7 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                           style: GoogleFonts.lato(
                             fontSize: 28,
                             fontWeight: FontWeight.w300,
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withAlpha((0.9 * 255).toInt()),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -660,9 +660,9 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
+                            color: Colors.white.withAlpha((0.1 * 255).toInt()),
                             borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.white.withOpacity(0.2)),
+                            border: Border.all(color: Colors.white.withAlpha((0.2 * 255).toInt())),
                           ),
                           child: Column(
                             children: [
@@ -670,7 +670,7 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                                 'Guardia de Servicio',
                                 style: GoogleFonts.lato(
                                   fontSize: 16,
-                                  color: Colors.white.withOpacity(0.7),
+                                  color: Colors.white.withAlpha((0.7 * 255).toInt()),
                                 ),
                               ),
                               const SizedBox(height: 8),
@@ -688,7 +688,7 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                                 'Puerta: $_assignedDoor',
                                 style: GoogleFonts.lato(
                                   fontSize: 16,
-                                  color: Colors.white.withOpacity(0.8),
+                                  color: Colors.white.withAlpha((0.8 * 255).toInt()),
                                 ),
                               ),
                             ],
@@ -716,7 +716,7 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                                   DateFormat('EEEE, d MMMM yyyy', 'es').format(now),
                                   style: GoogleFonts.lato(
                                     fontSize: 18,
-                                    color: Colors.white.withOpacity(0.7),
+                                    color: Colors.white.withAlpha((0.7 * 255).toInt()),
                                   ),
                                 ),
                               ],
@@ -730,7 +730,7 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                           'Toca la pantalla o escanea un código para continuar',
                           style: GoogleFonts.lato(
                             fontSize: 16,
-                            color: Colors.white.withOpacity(0.6),
+                            color: Colors.white.withAlpha((0.6 * 255).toInt()),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -767,7 +767,7 @@ class _UserScannerScreenState extends State<UserScannerScreen> with TickerProvid
                   height: size,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.white.withOpacity(opacity),
+                    color: Colors.white.withAlpha((opacity * 255).toInt()),
                   ),
                 ),
               );

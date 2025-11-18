@@ -11,7 +11,7 @@ import '../../config.dart';
 
 // Asegura que la clase esté exportada correctamente
 class PendingAllExitScreen extends StatefulWidget {
-  const PendingAllExitScreen({Key? key}) : super(key: key);
+  const PendingAllExitScreen({super.key});
 
   @override
   State<PendingAllExitScreen> createState() => _PendingAllExitScreenState();
@@ -90,7 +90,7 @@ class _PendingAllExitScreenState extends State<PendingAllExitScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.red[700]?.withOpacity(0.92),
+  backgroundColor: Colors.red[700]?.withAlpha((0.92 * 255).toInt()),
         elevation: 8,
         title: Text(
           'Alumnos sin salida registrada',
@@ -160,7 +160,7 @@ class _PendingAllExitScreenState extends State<PendingAllExitScreen> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.red[200]!.withOpacity(0.18),
+                          color: Colors.red[200]!.withAlpha((0.18 * 255).toInt()),
                           blurRadius: 8,
                           offset: const Offset(0, 4),
                         ),
