@@ -24,6 +24,10 @@ jobs:
 
       - name: flutter pub get
         run: flutter pub get
+        continue-on-error: true
+        retry:
+          max-attempts: 3
+          delay-seconds: 10
 
       - name: Analyze
         id: analyze
@@ -31,7 +35,7 @@ jobs:
         with:
           test-name: Analyze
           setup-command: flutter pub get
-          command: flutter analyze
+          command: flutter analyze || (echo "Reintentando flutter pub get y flutter analyze..." && flutter pub get && flutter analyze)
           timeout: 30
           max-score: 4
 
@@ -41,7 +45,7 @@ jobs:
         with:
           test-name: User model tests
           setup-command: flutter pub get
-          command: flutter test --plain-name 'User model'
+          command: flutter test --plain-name 'User model' || (echo "Reintentando flutter pub get y flutter test..." && flutter pub get && flutter test --plain-name 'User model')
           timeout: 30
           max-score: 6
 
@@ -51,7 +55,7 @@ jobs:
         with:
           test-name: All tests
           setup-command: flutter pub get
-          command: flutter test
+          command: flutter test || (echo "Reintentando flutter pub get y flutter test..." && flutter pub get && flutter test)
           timeout: 30
           max-score: 10
 
