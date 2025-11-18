@@ -86,9 +86,10 @@ jobs:
 ```
 
 ### Ejecución del workflow en Actions
-![alt text](images/Workflow.png)
+<img width="528" height="146" alt="image" src="https://github.com/user-attachments/assets/dd06834c-12dd-4c67-a000-444e3c86d904" />
 
-![alt text](images/Workflow1.png)
+<img width="1877" height="883" alt="image" src="https://github.com/user-attachments/assets/13066497-fe4a-419b-aaa1-d45cd721737f" />
+
 ---
 
 ## Explicación de lo realizado
